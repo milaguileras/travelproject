@@ -1,21 +1,21 @@
 [
 	{
-		"OrganizationName": "Organization One",
+		"OrganizationName": "Iguaçu Falls",
 		"OrganizationId": "Org1",
 		"Description": "This is organization 1"
 	},
 	{
-		"OrganizationName": "Organization Two",
+		"OrganizationName": "Paris",
 		"OrganizationId": "Org2",
 		"Description": "This is organization 2"
     },
     {
-		"OrganizationName": "Organization Three",
+		"OrganizationName": "Hong Kong",
 		"OrganizationId": "Org3",
 		"Description": "This is organization 3" 
 	},
 	{
-		"OrganizationName": "Organization Four",
+		"OrganizationName": "Bali",
 		"OrganizationId": "Org4",
 		"Description": "This is organization 4"
 	}
