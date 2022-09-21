@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
     'Destinations ',
     'Group Page ',
     'User Page ',
-    'Login '
+    'Login ',
   ]
   constructor() { }
 

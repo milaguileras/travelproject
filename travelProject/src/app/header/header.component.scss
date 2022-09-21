@@ -4,10 +4,11 @@ header{
 }
 .header{
     display: inline-flex;
-    flex-direction: row-reverse;
     top: 18px;
     left: 10px;
     justify-items: flex-end;
+    font-size: smaller;
+    gap: 15px
 }
 .banner{
     float: left;
