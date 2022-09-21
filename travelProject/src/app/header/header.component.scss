@@ -1,0 +1,20 @@
+header{
+    border-bottom: 36px solid white;
+    margin-bottom: 0;
+}
+.header{
+    display: inline-flex;
+    flex-direction: row-reverse;
+    top: 18px;
+    left: 10px;
+    justify-items: flex-end;
+}
+.banner{
+    float: left;
+    height: 100px;
+    background: #555;
+}
+img{
+    height: 500px;
+    width: fit-content;
+}
