@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { pairs } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,7 @@ export class HeaderComponent implements OnInit {
     'User Page ',
     'Login ',
   ]
+  cards= []
   constructor() { }
 
   ngOnInit(): void {
