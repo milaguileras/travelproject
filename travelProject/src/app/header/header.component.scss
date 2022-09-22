@@ -1,9 +1,11 @@
-header{
-    border-bottom: 36px solid white;
-    margin-bottom: 0;
+section{
+    justify-content: right;
+}
+span{
+    justify-content: left;
 }
 .header{
-    display: inline-flex;
+    display: flex;
     top: 18px;
     left: 10px;
     justify-items: flex-end;
@@ -11,11 +13,10 @@ header{
     gap: 15px
 }
 .banner{
-    float: left;
-    height: 100px;
-    background: #555;
+    width: 100%;
 }
 img{
-    height: 500px;
-    width: fit-content;
+    height: 400px;
+    width: inherit;
+    display: flex;
 }
