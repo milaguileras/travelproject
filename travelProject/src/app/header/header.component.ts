@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { pairs } from 'rxjs';
+import { Component, Injectable, OnInit } from '@angular/core';
+import {HttpClient, HttpRequest} from '@angular/common/http'; 
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
+
 export class HeaderComponent implements OnInit {
   links = [
     'Register ',
@@ -14,7 +16,6 @@ export class HeaderComponent implements OnInit {
     'User Page ',
     'Login ',
   ]
-  cards= []
   constructor() { }
 
   ngOnInit(): void {
