@@ -4,3 +4,9 @@
 .content > mat-card {
     width: 200px;
 }
+mat-toolbar{
+    flex-direction: column;
+}
+h1{
+    font-size: small;
+}

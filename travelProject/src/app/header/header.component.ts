@@ -10,15 +10,19 @@ import {HttpClient, HttpRequest} from '@angular/common/http';
 
 export class HeaderComponent implements OnInit {
   links = [
-    'Register ',
-    'Destinations ',
-    'Group Page ',
-    'User Page ',
-    'Login ',
+    {'name': 'Register ',
+    'route': 'register'},
+    {'name': 'Destinations ',
+    'route': 'destination'},
+    {'name': 'Group Page ',
+    'route': 'group-page'},
+    {'name': 'User Page ',
+    'route': 'user-page'},
+    {'name': 'Login ',
+    'route': 'login'},
   ]
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
 }

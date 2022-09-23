@@ -10,14 +10,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {HttpClient, HttpRequest} from '@angular/common/http';
-import { LandingPageComponent } from './landing-page/landing-page.component'; 
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { GroupPageComponent } from './group-page/group-page.component'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    GroupPageComponent
   ],
   imports: [
     BrowserModule,

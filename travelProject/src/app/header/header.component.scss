@@ -1,5 +1,11 @@
-section{
+a{
     justify-content: right;
+    font-size: smaller;
+    align-items: center;
+    border: 0cm;
+}
+.logoimg{
+    max-height: 30px;
 }
 span{
     justify-content: left;
@@ -15,8 +21,9 @@ span{
 .banner{
     width: 100%;
 }
-img{
+.bannerimg{
     height: 400px;
     width: inherit;
     display: flex;
+    object-fit: cover;
 }
