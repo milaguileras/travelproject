@@ -11,7 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {HttpClient, HttpRequest} from '@angular/common/http';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { GroupPageComponent } from './group-page/group-page.component'; 
+import { GroupPageComponent } from './group-page/group-page.component';
+import { GroupFormComponent } from './group-form/group-form.component'; 
+import { MatRadioModule } from '@angular/material/radio';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +27,8 @@ import { GroupPageComponent } from './group-page/group-page.component';
     AppComponent,
     HeaderComponent,
     LandingPageComponent,
-    GroupPageComponent
+    GroupPageComponent,
+    GroupFormComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +38,13 @@ import { GroupPageComponent } from './group-page/group-page.component';
     MatToolbarModule,
     MatButtonModule,
     FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
