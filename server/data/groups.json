@@ -1,7 +1,7 @@
 [
   {
     "GroupId": 1,
-    "GroupName": "United Front",
+    "GroupName": "Boat Tour",
     "OrganizationName": "Organization One",
     "SponsorName": "Natalie Rachelle",
     "SponsorPhone": "555-000-0000",
@@ -30,7 +30,7 @@
   },
   {
     "GroupId": 2,
-    "GroupName": "Warriors",
+    "GroupName": "Wine Tour",
     "OrganizationName": "Organization Two",
     "SponsorName": "Brittany Ray",
     "SponsorPhone": "555-000-0004",
@@ -53,7 +53,7 @@
   },
   {
     "GroupId": 3,
-    "GroupName": "Strategy One",
+    "GroupName": "City Hike",
     "OrganizationName": "Organization Three",
     "SponsorName": "Zachary Westly",
     "SponsorPhone": "555-000-0012",
