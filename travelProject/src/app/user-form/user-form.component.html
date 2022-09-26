@@ -72,6 +72,29 @@
         >
         Please pick a destination
         </p>
+        <label for="group" class="block labelTop">Group Tour</label>
+        <select
+            name="group"
+            id="group"
+            size="1"
+            formControlName="group"
+            tabindex="5"
+        >
+            <option
+                *ngFor="let group of groups; let i = index"
+                value="{{ group.GroupName }}"
+            >
+            {{ this.groups[i].GroupName }}
+            </option>
+        </select>
+        <p
+          *ngIf="
+            !regForm.controls['destination'].valid &&
+            regForm.controls['destination'].touched"
+            class="formMessage"
+        >
+        Please pick a tour
+        </p>
         <input
             type="submit"
             tabindex="7"

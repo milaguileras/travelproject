@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit {
     'route': 'destination'},
     {'name': 'Group Page ',
     'route': 'group-page'},
-    {'name': 'User Page ',
-    'route': 'user-page'},
+    {'name': 'Sign Up ',
+    'route': 'signup'},
     {'name': 'Login ',
     'route': 'login'},
   ]
