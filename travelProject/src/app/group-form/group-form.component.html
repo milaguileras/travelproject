@@ -1,5 +1,11 @@
 
-<form class="form-container">
+<form class="form-container" 
+[formGroup]="groupForm"
+(ngSubmit)="onSubmit(groupForm.value)"
+name="registerForm"
+class="box"
+id="registerForm"
+>
     <mat-card>
         <mat-card-header>
             <mat-card-title>Create your own tour</mat-card-title>
@@ -8,15 +14,15 @@
             <div class="row">
                 <div class="col-md-6">
                     <mat-form-field class="full-width">
-                        <input matinput="" placeholder="Group Name">
+                        <input matinput="" placeholder="Group Name" regFormControl="profileForm?.groupName">
                     </mat-form-field>
                 </div>
-                <div class="col-md-6">
+                <div class="example-container">
                     <mat-form-field appearance="fill">
-                        <mat-label>Location</mat-label>
+                        <mat-label>Select me</mat-label>
                         <mat-select>
-                            <!--Add Drop organizations from server as drop down options-->
                             <mat-option value="option">Option1</mat-option>
+                            <mat-option value="option">Option2</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
@@ -29,20 +35,19 @@
                 </div>
                 <div class="col-sm-6">
                     <mat-form-field class="full-width">
-                        <textarea matinput="" placeholder="Phone Number" [formControl]="phone" required></textarea>
+                        <textarea matinput="" placeholder="Phone Number" regFormControl="phone" required></textarea>
                     </mat-form-field>
                 </div>
-                <div class="example-container">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Enter your email</mat-label>
-                        <input matInput placeholder="name@example.com" [formControl]="email" required>
-                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                <div class="container">
+                    <mat-form-field class="full-width">
+                        <textarea matinput="" placeholder="email" regFormControl="email" required></textarea>
+                        <mat-error *ngIf="groupForm.invalid">{{getErrorMessage()}}</mat-error>
                     </mat-form-field>
                 </div>
             </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button="" color="primary">Save</button>
+            <button mat-raised-button="" color="primary">Submit</button>
         </mat-card-actions>
     </mat-card>
 </form>

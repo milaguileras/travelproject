@@ -1,0 +1,45 @@
+<form
+    [formGroup]="regForm"
+    (ngSubmit)="onSubmit(regForm.value)"
+    name="registerForm"
+    class="box"
+    id="registerForm"
+>
+<label for="firstname" class="block labelTop">First Name</label>
+<input
+    type="text"
+    id="name"
+    name="name"
+    autocomplete="name"
+    formControlName="name"
+    tabindex="1"
+    placeholder="Enter your name here."
+/>
+<p *ngIf="!regForm.controls['name'].valid && regForm.controls['name'].touched" class="formMessage">
+    Please enter your name.
+</p>
+<label for="email" class="block labelTop">Email</label>
+<input
+    type="email"
+    name="email"
+    id="email"
+    formControlName="email"
+    placeholder="Enter your email address here."
+    minlength="5"
+    tabindex="2"
+    autocomplete="email"
+/>
+<p *ngIf="!regForm.controls['email'].valid && regForm.controls['email'].touched" class="formMessage">
+    Please enter a valid email address.
+</p>
+<p *ngIf="!regForm.controls['gender'].valid && regForm.controls['gender'].touched" class="formMessage">
+    Please enter your gender.
+</p>
+<label for="ageGroup" class="block labelTop">Age Group</label>
+<input
+    type="submit"
+    tabindex="7"
+    id="register-user"
+    class="fpButton box-extra"
+/>
+</form>

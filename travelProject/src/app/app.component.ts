@@ -7,5 +7,5 @@ import {HttpClient, HttpRequest} from '@angular/common/http';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'travelProject';
+  title = 'Cool Tour Travel Agency';
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import {   FormBuilder, FormControl, FormGroup, Validators, } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-group-form',
@@ -7,19 +8,36 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./group-form.component.scss']
 })
 export class GroupFormComponent implements OnInit {
-  email = new FormControl('', [Validators.required, Validators.email]);
-  phone = new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]+')] )
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter an email';
-    }
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+  groupForm!: FormGroup;
+  destination = []
+  maxGroupSize = ['select max group size', '4', '5', '6', '7', '8', '9', '10']
+  submit!: boolean;
+  //phone: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]+')] )
+  constructor(private form: FormBuilder, private router: Router) { 
+    this.groupForm = form.group({
+      groupName: [null, [Validators.required]],
+      destination: [null, [Validators.required]],
+      sponsorName: [null, [Validators.required]],
+      phone: [null, Validators.compose([Validators.required, Validators.pattern('[- +()0-9]+')])],
+      email: [null, Validators.compose([Validators.required, Validators.email])],
+      maxGroupSize:[null, [Validators.required]]
+    })
   }
-
-  constructor() { }
 
   ngOnInit(): void {
   }
+
+  onSubmit(formValues: any): void {
+    this.submit = true;
+    this.router.navigate(['group']);
+  }
+
+  getErrorMessage() {
+    if (this.groupForm.hasError('required')) {
+      return 'You must enter an email';
+    }
+    return this.groupForm.hasError('email') ? 'Not a valid entry' : '';
+  }
+
 
 }
