@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Destinations } from '../models/destinations.model';
+import { Destination } from '../models/destination.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,9 @@ export class DestinationsService {
 
   constructor(private http: HttpClient) { }
 
-  getDestinations(): Observable<Destinations>{
-    const data: Observable<Destinations> = this.http.get<Destinations>(this.destinationsUrl);
+  getDestinations(): Observable<Destination[]>{
+    const data: Observable<Destination[]> = this.http.get<Destination[]>(this.destinationsUrl);
+    console.log(data)
     return data;
   }
 }

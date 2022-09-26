@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DestinationsService } from '../services/destination.service';
+import { Destination } from '../models/destination.model';
 
 @Component({
   selector: 'app-user-form',
@@ -11,9 +13,9 @@ import { Router } from '@angular/router';
 export class UserFormComponent implements OnInit {
   regForm!: FormGroup;
   submit!: boolean;
-  destination!:[]
+  destinations!: Destination[]
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private destinationService: DestinationsService) {
     this.regForm = fb.group({
       name: [null, [Validators.required]],
       email: [
@@ -27,6 +29,10 @@ export class UserFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.regForm.valueChanges.subscribe((value) => console.log(value));
+    this.destinationService.getDestinations().subscribe((destinations) => {
+      console.log(destinations);
+      this.destinations = destinations
+    })
   }
 
   canDeactivate(): boolean {

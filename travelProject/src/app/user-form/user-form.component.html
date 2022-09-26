@@ -58,10 +58,10 @@
             tabindex="4"
         >
             <option
-                *ngFor="let group of destination; let i = index"
-                value="{{ this.destination[i] }}"
+                *ngFor="let destination of destinations; let i = index"
+                value="{{ destination.organizationName }}"
             >
-            {{ this.destination[i] }}
+            {{ this.destinations[i].organizationName }}
             </option>
         </select>
         <p

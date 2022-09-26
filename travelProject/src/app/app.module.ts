@@ -6,7 +6,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClient, HttpRequest} from '@angular/common/http';
+import {HttpClient, HttpClientModule, HttpRequest} from '@angular/common/http';
 
 import { MatCardModule} from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -46,7 +46,8 @@ import { UserFormComponent } from './user-form/user-form.component';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

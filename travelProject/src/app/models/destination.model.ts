@@ -1,4 +1,4 @@
-export class Destinations {
+export class Destination {
     organizationName!: string;
     organizationId!: string;
     description!: string;

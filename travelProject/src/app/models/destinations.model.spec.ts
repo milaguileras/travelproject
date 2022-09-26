@@ -1,7 +1,7 @@
-import { Destinations } from './destinations.model';
+import { Destination } from './destination.model';
 
 describe('Destinations', () => {
   it('should create an instance', () => {
-    expect(new Destinations()).toBeTruthy();
+    expect(new Destination()).toBeTruthy();
   });
 });
