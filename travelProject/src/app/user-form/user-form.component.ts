@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class UserFormComponent implements OnInit {
   regForm!: FormGroup;
   submit!: boolean;
+  destination!:[]
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.regForm = fb.group({
@@ -20,6 +21,7 @@ export class UserFormComponent implements OnInit {
         Validators.compose([Validators.required, Validators.email]),
       ],
       phone: [null, [Validators.required]],
+      destination: [null, [Validators.required]],
     });
   }
 

@@ -3,27 +3,31 @@
 		"OrganizationName": "Iguaçu Falls",
 		"OrganizationId": "Org1",
 		"Description": "See the Iguaçu Falls in ways never seen before",
-		"Image": "../../travelProject/src/assets/images/gabriel-ramos-4WeCPeCe5u0-unsplash.jpg"
+		"Image": "../../travelProject/src/assets/images/gabriel-ramos-4WeCPeCe5u0-unsplash.jpg",
+		"Image Alt": "Waterfalls from Iguazu"
 	},
 	{
 		"OrganizationName": "Paris",
 		"OrganizationId": "Org2",
 		"Description": "Get to know Paris in a variety of tours",
-		"Image": "../../travelProject/src/assets/images/anthony-delanoix-Q0-fOL2nqZc-unsplash.jpg"
+		"Image": "../../travelProject/src/assets/images/anthony-delanoix-Q0-fOL2nqZc-unsplash.jpg",
+		"Image Alt":"Eiffel Tower seen from a distance"
 
     },
     {
 		"OrganizationName": "Hong Kong",
 		"OrganizationId": "Org3",
 		"Description": "Explore a different side of Hong Kong", 
-		"Image": "../../travelProject/src/assets/images/alex-azabache-JbHx2kQkNpw-unsplash.jpg"
+		"Image": "../../travelProject/src/assets/images/alex-azabache-JbHx2kQkNpw-unsplash.jpg",
+		"Image Alt": "Man standing on a mountain with Honk Kong in the background"
 
 	},
 	{
 		"OrganizationName": "Zambia",
 		"OrganizationId": "Org4",
 		"Description": "Get immersed in the heart of Zambia",
-		"Image": "../../travelProject/src/assets/images/arpit-rastogi-Vn1rohRNW24-unsplash.jpg"
+		"Image": "../../travelProject/src/assets/images/arpit-rastogi-Vn1rohRNW24-unsplash.jpg",
+		"Image Alt":"Palm tree leaves superimposed"
 
 	}
 ]
