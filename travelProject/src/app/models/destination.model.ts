@@ -1,6 +1,6 @@
 export class Destination {
-    organizationName!: string;
-    organizationId!: string;
-    description!: string;
-    image!: string;
+    OrganizationName!: string;
+    OrganizationId!: string;
+    Description!: string;
+    Image!: string;
 }

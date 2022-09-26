@@ -30,8 +30,8 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
     this.regForm.valueChanges.subscribe((value) => console.log(value));
     this.destinationService.getDestinations().subscribe((destinations) => {
-      console.log(destinations);
       this.destinations = destinations
+      console.log(this.destinations);
     })
   }
 

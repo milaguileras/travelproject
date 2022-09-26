@@ -13,7 +13,6 @@ export class DestinationsService {
 
   getDestinations(): Observable<Destination[]>{
     const data: Observable<Destination[]> = this.http.get<Destination[]>(this.destinationsUrl);
-    console.log(data)
     return data;
   }
 }
