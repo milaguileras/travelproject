@@ -1,5 +1,9 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import {HttpClient, HttpRequest} from '@angular/common/http'; 
+import { DestinationsService } from '../services/destination.service';
+import { GroupService } from '../services/group.service';
+import { Destination } from '../models/destination.model';
+import { Group } from '../models/group.model';
 
 
 @Component({
@@ -21,8 +25,18 @@ export class HeaderComponent implements OnInit {
     {'name': 'Login ',
     'route': 'login'},
   ]
-  constructor() { }
+  destinations!: Destination[]
+  groups!: Group[]
 
-  ngOnInit(): void {  }
+  constructor(private destinationService: DestinationsService, private groupService: GroupService) { }
+
+  ngOnInit(): void { 
+    this.destinationService.getDestinations().subscribe((destinations) => {
+      this.destinations = destinations
+    })
+    this.groupService.getGroups().subscribe((groups) => {
+      this.groups = groups
+    })
+  }
 
 }

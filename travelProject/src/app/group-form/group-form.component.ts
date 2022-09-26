@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {   FormBuilder, FormControl, FormGroup, Validators, } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Destination } from '../models/destination.model';
+import { Group } from '../models/group.model';
+import { DestinationsService } from '../services/destination.service';
+import { GroupService } from '../services/group.service';
 
 @Component({
   selector: 'app-group-form',
@@ -9,34 +13,42 @@ import { Router } from '@angular/router';
 })
 export class GroupFormComponent implements OnInit {
   groupForm!: FormGroup;
-  destination = []
-  maxGroupSize = ['select max group size', '4', '5', '6', '7', '8', '9', '10']
   submit!: boolean;
-  //phone: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]+')] )
-  constructor(private form: FormBuilder, private router: Router) { 
+  destinations!: Destination[]
+  groups!: Group[]
+
+  constructor(private form: FormBuilder, private router: Router, private destinationService: DestinationsService, 
+    private groupService: GroupService) {
     this.groupForm = form.group({
       groupName: [null, [Validators.required]],
-      destination: [null, [Validators.required]],
       sponsorName: [null, [Validators.required]],
-      phone: [null, Validators.compose([Validators.required, Validators.pattern('[- +()0-9]+')])],
-      email: [null, Validators.compose([Validators.required, Validators.email])],
-      maxGroupSize:[null, [Validators.required]]
-    })
+      email: [
+        null,
+        Validators.compose([Validators.required, Validators.email]),
+      ],
+      phone: [null, [Validators.required]],
+      destination: [null, [Validators.required]],
+    });
   }
 
   ngOnInit(): void {
+    this.groupForm.valueChanges.subscribe((value) => console.log(value));
+    this.destinationService.getDestinations().subscribe((destinations) => {
+      this.destinations = destinations
+    })
+    this.groupService.getGroups().subscribe((groups) => {
+      this.groups = groups
+    })
+  }
+
+  canDeactivate(): boolean {
+    console.log(!this.groupForm.touched);
+    return !this.groupForm.touched || this.submit;
   }
 
   onSubmit(formValues: any): void {
     this.submit = true;
     this.router.navigate(['group']);
-  }
-
-  getErrorMessage() {
-    if (this.groupForm.hasError('required')) {
-      return 'You must enter an email';
-    }
-    return this.groupForm.hasError('email') ? 'Not a valid entry' : '';
   }
 
 

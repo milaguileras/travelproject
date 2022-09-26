@@ -18,8 +18,9 @@ export class UserFormComponent implements OnInit {
   destinations!: Destination[]
   groups!: Group[]
 
-  constructor(private fb: FormBuilder, private router: Router, private destinationService: DestinationsService, private groupService: GroupService) {
-    this.regForm = fb.group({
+  constructor(private form: FormBuilder, private router: Router, private destinationService: DestinationsService, 
+    private groupService: GroupService) {
+    this.regForm = form.group({
       name: [null, [Validators.required]],
       email: [
         null,
@@ -47,7 +48,7 @@ export class UserFormComponent implements OnInit {
 
   onSubmit(formValues: any): void {
     this.submit = true;
-    this.router.navigate(['myPlate']);
+    this.router.navigate(['group']);
   }
 
 }

@@ -1,53 +1,95 @@
-
-<form class="form-container" 
-[formGroup]="groupForm"
-(ngSubmit)="onSubmit(groupForm.value)"
-name="registerForm"
-class="box"
-id="registerForm"
+<form
+    [formGroup]="groupForm"
+    (ngSubmit)="onSubmit(groupForm.value)"
+    name="registerForm"
+    class="box"
+    id="registerForm"
 >
     <mat-card>
         <mat-card-header>
             <mat-card-title>Create your own tour</mat-card-title>
         </mat-card-header>
-        <mat-card-content>
-            <div class="row">
-                <div class="col-md-6">
-                    <mat-form-field class="full-width">
-                        <input matinput="" placeholder="Group Name" regFormControl="profileForm?.groupName">
-                    </mat-form-field>
-                </div>
-                <div class="example-container">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Select me</mat-label>
-                        <mat-select>
-                            <mat-option value="option">Option1</mat-option>
-                            <mat-option value="option">Option2</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <mat-form-field class="full-width">
-                        <textarea matinput="" placeholder="Sponsor Name"></textarea>
-                    </mat-form-field>
-                </div>
-                <div class="col-sm-6">
-                    <mat-form-field class="full-width">
-                        <textarea matinput="" placeholder="Phone Number" regFormControl="phone" required></textarea>
-                    </mat-form-field>
-                </div>
-                <div class="container">
-                    <mat-form-field class="full-width">
-                        <textarea matinput="" placeholder="email" regFormControl="email" required></textarea>
-                        <mat-error *ngIf="groupForm.invalid">{{getErrorMessage()}}</mat-error>
-                    </mat-form-field>
-                </div>
-            </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button="" color="primary">Submit</button>
-        </mat-card-actions>
+        <label for="groupName" class="block labelTop">Group Name</label>
+        <input
+            type="text"
+            id="groupName"
+            name="groupName"
+            autocomplete="groupName"
+            formControlName="groupName"
+            tabindex="1"
+            placeholder="Enter your group name"
+        />
+        <p *ngIf="!groupForm.controls['groupName'].valid && groupForm.controls['groupName'].touched" class="formMessage">
+            Please enter your group name. Make sure it describes a theme
+        </p>
+        <label for="destination" class="block labelTop">Destination</label>
+        <select
+            name="destination"
+            id="destination"
+            size="1"
+            formControlName="destination"
+            tabindex="2"
+        >
+            <option
+                *ngFor="let destination of destinations; let i = index"
+                value="{{ destination.OrganizationName }}"
+            >
+            {{ this.destinations[i].OrganizationName }}
+            </option>
+        </select>
+        <p
+          *ngIf="
+            !groupForm.controls['destination'].valid &&
+            groupForm.controls['destination'].touched"
+            class="formMessage"
+        >
+        Please pick a destination
+        </p>
+        <label for="sponsorName" class="block labelTop">Sponsor Name</label>
+        <input
+            type="text"
+            id="sponsorName"
+            name="sponsorName"
+            autocomplete="sponsorName"
+            formControlName="sponsorName"
+            tabindex="3"
+            placeholder="Enter your sponsor name"
+        />
+        <p *ngIf="!groupForm.controls['sponsorName'].valid && groupForm.controls['sponsorName'].touched" class="formMessage">
+            Please enter your group name. Make sure it describes a theme
+        </p>
+        <label for="email" class="block labelTop">Sponsor Email</label>
+        <input
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            placeholder="Enter your email address"
+            minlength="5"
+            tabindex="2"
+            autocomplete="email"
+        />
+        <p *ngIf="!groupForm.controls['email'].valid && groupForm.controls['email'].touched" class="formMessage">
+            Please enter a valid email address
+        </p>
+        <label for="phone" class="block labelTop">Sponsor Phone Number</label>
+        <input
+            type="text"
+            id="phone"
+            name="phone"
+            autocomplete="phone"
+            formControlName="phone"
+            tabindex="3"
+            placeholder="Enter your phone number"
+        />
+        <p *ngIf="!groupForm.controls['phone'].valid && groupForm.controls['phone'].touched" class="formMessage">
+            Please enter your phone
+        </p>
+        <input
+            type="submit"
+            tabindex="7"
+            id="register-user"
+            class="fpButton box-extra"
+        />
     </mat-card>
 </form>
