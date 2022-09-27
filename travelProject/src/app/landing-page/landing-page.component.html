@@ -5,15 +5,15 @@
     Cool Tour Travel Agency
     <h1>Experience the world in a different way with Cool Tour </h1>
 </mat-toolbar>
-<div class="content">
+<div class="content" *ngFor="let item of destinations; let i= index">
     <mat-card>
         <mat-card-header>
-            <mat-card-title>location</mat-card-title>
+            <mat-card-title>{{item.OrganizationName}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="../../assets/images/anthony-delanoix-Q0-fOL2nqZc-unsplash.jpg">
+        <img mat-card-image src={{item.Image}}>
         <mat-card-content>
             <p>
-                Come explore Paris in a variety of tours
+                {{item.Description}}
             </p>
         </mat-card-content>
         <mat-card-actions>
