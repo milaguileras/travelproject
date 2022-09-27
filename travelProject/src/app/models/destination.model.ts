@@ -3,4 +3,5 @@ export class Destination {
     OrganizationId!: number;
     Description!: string;
     Image!: string;
+    ImageAlt!:String;
 }

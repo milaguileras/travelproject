@@ -4,14 +4,14 @@
 		"OrganizationId": "Org1",
 		"Description": "See the Iguaçu Falls in ways never seen before",
 		"Image": "../assets/images/ignacio-aguilar-PK32VXa8LGM-unsplash.jpg",
-		"Image Alt": "Waterfalls from Iguazu"
+		"ImageAlt": "Waterfalls from Iguazu"
 	},
 	{
 		"OrganizationName": "Paris",
 		"OrganizationId": "Org2",
 		"Description": "Get to know Paris in a variety of tours",
 		"Image": "../assets/images/anthony-delanoix-Q0-fOL2nqZc-unsplash.jpg",
-		"Image Alt":"Eiffel Tower seen from a distance"
+		"ImageAlt":"Eiffel Tower seen from a distance"
 
     },
     {
@@ -19,15 +19,15 @@
 		"OrganizationId": "Org3",
 		"Description": "Explore a different side of Hong Kong", 
 		"Image": "../assets/images/alex-azabache-JbHx2kQkNpw-unsplash.jpg",
-		"Image Alt": "Man standing on a mountain with Honk Kong in the background"
+		"ImageAlt": "Man standing on a mountain with Honk Kong in the background"
 
 	},
 	{
-		"OrganizationName": "Zambia",
+		"OrganizationName": "Cape Town",
 		"OrganizationId": "Org4",
-		"Description": "Get immersed in the heart of Zambia",
-		"Image": "../assets/images/arpit-rastogi-Vn1rohRNW24-unsplash.jpg",
-		"Image Alt":"Palm tree leaves superimposed"
+		"Description": "Get immersed in the heart of South Africa",
+		"Image": "../assets/images/kylefromthenorth-UrhglJ-2Q8M-unsplash.jpg",
+		"ImageAlt":"Picture of the beach with mountains in the background"
 
 	}
 ]

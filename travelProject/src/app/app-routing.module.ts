@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'home', component: LandingPageComponent},
   {path: 'group', component: GroupPageComponent},
-  {path: 'addgroup', component: GroupFormComponent},
+  {path: 'register', component: GroupFormComponent},
   {path: 'signup', component: UserFormComponent},
   {path: '**', component: LandingPageComponent}
 ];
