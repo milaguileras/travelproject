@@ -1,1 +1,33 @@
-<p>group-page works!</p>
+<div class="container">
+    <div *ngFor="let item of destinations; let i= index" >
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    {{item.OrganizationName}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                    {{item.Description}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngFor="let group of groups; let i= index">
+                    <mat-accordion>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                {{group.GroupName}}
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                Sponsor:  {{group.SponsorName}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div>
+                                {{group.Members.MemberName}}
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

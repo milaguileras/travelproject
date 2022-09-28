@@ -8,8 +8,11 @@
     object-fit: cover;
 }
 .content {
-    padding: 16px;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+    margin-left: 10%;
 }
 .content > mat-card {
     width: 200px;

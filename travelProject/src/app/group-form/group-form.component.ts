@@ -16,6 +16,7 @@ export class GroupFormComponent implements OnInit {
   submit!: boolean;
   destinations!: Destination[]
   groups!: Group[]
+  errorMessage!: string;
 
   constructor(private form: FormBuilder, private router: Router, private destinationService: DestinationsService, 
     private groupService: GroupService) {
@@ -35,10 +36,10 @@ export class GroupFormComponent implements OnInit {
     this.groupForm.valueChanges.subscribe((value) => console.log(value));
     this.destinationService.getDestinations().subscribe((destinations) => {
       this.destinations = destinations
-    })
+    });
     this.groupService.getGroups().subscribe((groups) => {
       this.groups = groups
-    })
+    });
   }
 
   canDeactivate(): boolean {
@@ -46,10 +47,22 @@ export class GroupFormComponent implements OnInit {
     return !this.groupForm.touched || this.submit;
   }
 
-  onSubmit(formValues: any): void {
-    this.submit = true;
-    this.router.navigate(['group']);
+  insertGroup(group: Group): void {
+    this.groupService.addGroups(group).subscribe({
+      next: (group) => {
+        this.groupService.getGroups();
+      },
+    });
   }
 
-
+  onSubmit(group: Group): void {
+    if (this.groupForm.invalid) {
+      console.log('submitGoal(): this.groupForm.invalid = true ');
+      return;
+    }
+    if (group.GroupId === null || group.GroupId < 1) {
+      this.insertGroup(group);
+      window.location.reload();
+    }
+  }
 }

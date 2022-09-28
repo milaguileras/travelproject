@@ -6,5 +6,10 @@ export class Group {
     SponsorPhone!: string;
     SponsorEmail!: string;
     MaxGroupSize!: number;
-    Members!: any
+    Members!: {
+        MemberId: number;
+        MemberEmail: string;
+        MemberName: string;
+        MemberPhone: string;
+    }
 }
