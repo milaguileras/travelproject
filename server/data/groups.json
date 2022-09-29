@@ -2,11 +2,11 @@
   {
     "GroupId": 1,
     "GroupName": "Boat Tour",
-    "OrganizationName": "Organization One",
+    "OrganizationName": "Iguaçu Falls",
     "SponsorName": "Natalie Rachelle",
     "SponsorPhone": "555-000-0000",
     "SponsorEmail": "nat214@gmail.com",
-    "MaxGroupSize": 7,
+    "MaxGroupSize": 5,
     "Members": [
       {
         "MemberId": 2,
@@ -31,11 +31,11 @@
   {
     "GroupId": 2,
     "GroupName": "Wine Tour",
-    "OrganizationName": "Organization Two",
+    "OrganizationName": "Paris",
     "SponsorName": "Brittany Ray",
     "SponsorPhone": "555-000-0004",
     "SponsorEmail": "brit805@aol.com",
-    "MaxGroupSize": 7,
+    "MaxGroupSize": 5,
     "Members": [
       {
         "MemberId": 1,
@@ -54,11 +54,11 @@
   {
     "GroupId": 3,
     "GroupName": "City Hike",
-    "OrganizationName": "Organization Three",
+    "OrganizationName": "Hong Kong",
     "SponsorName": "Zachary Westly",
     "SponsorPhone": "555-000-0012",
     "SponsorEmail": "zwest90@gmail.com",
-    "MaxGroupSize": 7,
+    "MaxGroupSize": 5,
     "Members": [
       {
         "MemberId": 3,
@@ -67,5 +67,15 @@
         "MemberPhone": "555-000-0025"
       }
     ]
+  },
+  {
+    "GroupId": 22,
+    "GroupName": "Food Tour",
+    "OrganizationName": "Cape Town",
+    "SponsorName": "Mary Ann",
+    "SponsorPhone": "5555555555",
+    "SponsorEmail": "maryann@gmail.com",
+    "MaxGroupSize": 3,
+    "Members": []
   }
 ]

@@ -2,14 +2,14 @@
 	{
 		"OrganizationName": "Iguaçu Falls",
 		"OrganizationId": "Org1",
-		"Description": "See the Iguaçu Falls in ways never seen before",
+		"Description": "See the Iguaçu Falls in ways never seen before.",
 		"Image": "../assets/images/ignacio-aguilar-PK32VXa8LGM-unsplash.jpg",
 		"ImageAlt": "Waterfalls from Iguazu"
 	},
 	{
 		"OrganizationName": "Paris",
 		"OrganizationId": "Org2",
-		"Description": "Get to know Paris in a variety of tours",
+		"Description": "Get to know Paris in a variety of tours.",
 		"Image": "../assets/images/anthony-delanoix-Q0-fOL2nqZc-unsplash.jpg",
 		"ImageAlt":"Eiffel Tower seen from a distance"
 
@@ -17,7 +17,7 @@
     {
 		"OrganizationName": "Hong Kong",
 		"OrganizationId": "Org3",
-		"Description": "Explore a different side of Hong Kong", 
+		"Description": "Explore a different side of Hong Kong.", 
 		"Image": "../assets/images/alex-azabache-JbHx2kQkNpw-unsplash.jpg",
 		"ImageAlt": "Man standing on a mountain with Honk Kong in the background"
 
@@ -25,9 +25,25 @@
 	{
 		"OrganizationName": "Cape Town",
 		"OrganizationId": "Org4",
-		"Description": "Get immersed in the heart of South Africa",
+		"Description": "Get immersed in the heart of South Africa.",
 		"Image": "../assets/images/kylefromthenorth-UrhglJ-2Q8M-unsplash.jpg",
 		"ImageAlt":"Picture of the beach with mountains in the background"
+
+	},
+	{
+		"OrganizationName": "Auckland",
+		"OrganizationId": "Org4",
+		"Description": "Discover a world of adventures in the land down under. ",
+		"Image": "../assets/images/sulthan-auliya-oQrJ82Iekqk-unsplash.jpg",
+		"ImageAlt":"Picture of Auckland with city views in the background and water on the foreground"
+
+	},
+	{
+		"OrganizationName": "Coming Soon",
+		"OrganizationId": "Org4",
+		"Description": "We are always looking to add new destinations. Keep your eyes open for announcements.",
+		"Image": "../assets/images/jon-tyson-XmMsdtiGSfo-unsplash.jpg",
+		"ImageAlt":"Picture of a plus sign"
 
 	}
 ]
