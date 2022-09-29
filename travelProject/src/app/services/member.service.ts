@@ -19,14 +19,12 @@ export class MemberService {
         return data
     }
 
-    addGroups(member: Member): Observable<Member> {
+    addMembers(groupId: number, member: Member): Observable<Member> {
         const results: Observable<Member> = this.http.post<Member>(
-            this.groupUrl,
+            `${this.groupUrl}/${groupId}/members`,
             member,
-            this.jsonContentTypeHeaders
-        );
-        console.log(`addGroup(${member}) returned ${results}`);
-        console.log(typeof member.MemberId);
+            this.jsonContentTypeHeaders);
+        console.log(`addMemberToGroup() returned ${results}`);
         return results;
     }
 }

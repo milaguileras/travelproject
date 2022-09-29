@@ -1,6 +1,6 @@
 <form
-    [formGroup]="regForm"
-    (ngSubmit)="onSubmit(regForm.value)"
+    [formGroup]="memberForm"
+    (ngSubmit)="onSubmit()"
     name="registerForm"
     class="box"
     id="registerForm"
@@ -19,7 +19,7 @@
             tabindex="1"
             placeholder="Enter your name"
         />
-        <p *ngIf="!regForm.controls['name'].valid && regForm.controls['name'].touched" class="formMessage">
+        <p *ngIf="!memberForm.controls['name'].valid && memberForm.controls['name'].touched" class="formMessage">
             Please enter your name
         </p>
         <label for="email" class="block labelTop">Email</label>
@@ -33,7 +33,7 @@
             tabindex="2"
             autocomplete="email"
         />
-        <p *ngIf="!regForm.controls['email'].valid && regForm.controls['email'].touched" class="formMessage">
+        <p *ngIf="!memberForm.controls['email'].valid && memberForm.controls['email'].touched" class="formMessage">
             Please enter a valid email address
         </p>
         <label for="phone" class="block labelTop">Phone Number</label>
@@ -46,7 +46,7 @@
             tabindex="3"
             placeholder="Enter your phone number"
         />
-        <p *ngIf="!regForm.controls['phone'].valid && regForm.controls['phone'].touched" class="formMessage">
+        <p *ngIf="!memberForm.controls['phone'].valid && memberForm.controls['phone'].touched" class="formMessage">
             Please enter your phone
         </p>
         <label for="destination" class="block labelTop">Destination</label>
@@ -66,8 +66,8 @@
         </select>
         <p
           *ngIf="
-            !regForm.controls['destination'].valid &&
-            regForm.controls['destination'].touched"
+            !memberForm.controls['destination'].valid &&
+            memberForm.controls['destination'].touched"
             class="formMessage"
         >
         Please pick a destination
@@ -89,14 +89,14 @@
         </select>
         <p
           *ngIf="
-            !regForm.controls['group'].valid &&
-            regForm.controls['group'].touched"
+            !memberForm.controls['group'].valid &&
+            memberForm.controls['group'].touched"
             class="formMessage"
         >
         Please pick a tour
         </p>
         <input
-            type="submit"
+            type="submit" 
             tabindex="6"
             id="register-user"
             class="fpButton box-extra"

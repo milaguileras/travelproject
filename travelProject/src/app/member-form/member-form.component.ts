@@ -15,16 +15,17 @@ import { MemberService } from '../services/member.service';
 })
 
 export class MemberFormComponent implements OnInit {
-  regForm!: FormGroup;
+  memberForm!: FormGroup;
   submit!: boolean;
   destinations!: Destination[];
   groups!: Group[];
   errorMessage!: string;
   newMember: Member = new Member()
 
+
   constructor(private form: FormBuilder, private router: Router, private destinationService: DestinationsService, 
-    private groupService: GroupService, memberService: MemberService) {
-    this.regForm = form.group({
+    private groupService: GroupService, private memberService: MemberService) {
+    this.memberForm = form.group({
       name: [null, [Validators.required]],
       email: [
         null,
@@ -37,25 +38,41 @@ export class MemberFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.regForm.valueChanges.subscribe((value) => console.log(value));
+    this.memberForm.valueChanges.subscribe((value) => {
+      this.newMember.MemberEmail = value.email;
+      this.newMember.MemberName = value.name;
+      this.newMember.MemberPhone = value.phone;
+    });
+
     this.destinationService.getDestinations().subscribe((destinations) => {
       this.destinations = destinations.filter((destination)=>{
         return destination.OrganizationName !== 'Coming Soon'
       });
     })
+
     this.groupService.getGroups().subscribe((groups) => {
       this.groups = groups
     })
   }
 
   canDeactivate(): boolean {
-    console.log(!this.regForm.touched);
-    return !this.regForm.touched || this.submit;
+    console.log(!this.memberForm.touched);
+    return !this.memberForm.touched || this.submit;
   }
 
-  onSubmit(formValues: any): void {
-    this.submit = true;
-    this.router.navigate(['group']);
+  insertMember(member: Member, id: number ): void {
+    this.memberService.addMembers(member, id).subscribe({
+      next: (member) => {
+        window.location.reload();
+      },
+    });
   }
 
+  onSubmit(): void {
+    if (this.memberForm.invalid) {
+      console.log('submitMember(): this.memberForm.invalid = true ');
+      return;
+    }
+    this.insertMember(this.newMember, this.newMember.MemberId);
+  }
 }

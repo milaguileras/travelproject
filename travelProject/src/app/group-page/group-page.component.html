@@ -10,7 +10,7 @@
                     {{item.Description}}
                     </mat-panel-description>
                 </mat-expansion-panel-header>
-                <div *ngFor="let group of groups; let i= index">
+                <div *ngFor="let group of item.Groups; let i= index">
                     <mat-accordion>
                         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
@@ -21,9 +21,9 @@
                                 Sponsor:  {{group.SponsorName}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <!-- <div>
-                                {{group.Members.MemberName}}
-                            </div> -->
+                            <div *ngFor="let member of group.Members">
+                                {{member.MemberName}}  {{member.MemberEmail}} {{member.MemberPhone}
+                            </div>
                         </mat-expansion-panel>
                     </mat-accordion>
                 </div>
