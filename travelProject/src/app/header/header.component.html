@@ -1,7 +1,7 @@
 <header>
     <div class="header">
         <span>
-            <img class="logoimg" src="../../assets/images/airplane-1755.png">
+            <img class="logoimg" src="../../assets/images/airplane-1755.png" [routerLink]="['/home']">
         </span>
         <a mat-stroked-button target="_blank" *ngFor="let link of links" routerLink={{link.route}} target="_self">{{link.name}}</a>
     </div>

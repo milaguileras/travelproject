@@ -1,6 +1,6 @@
 <form
     [formGroup]="memberForm"
-    (ngSubmit)="onSubmit()"
+    (ngSubmit)="onSubmit(memberForm.value)"
     name="registerForm"
     class="box"
     id="registerForm"
@@ -74,6 +74,7 @@
         </p>
         <label for="group" class="block labelTop">Group Tour</label>
         <select
+            #groupChoice
             name="group"
             id="group"
             size="1"
@@ -81,10 +82,10 @@
             tabindex="5"
         >
             <option
-                *ngFor="let group of groups; let i = index"
-                value="{{ group.GroupName }}"
+                *ngFor="let group of groupsFiltered"
+                value="{{ group.GroupId }}"
             >
-            {{ this.groups[i].GroupName }}
+            {{ group.GroupName}}
             </option>
         </select>
         <p
