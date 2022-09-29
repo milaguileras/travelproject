@@ -61,11 +61,11 @@ export class MemberFormComponent implements OnInit {
   }
 
   insertMember(member: Member, id: number ): void {
-    this.memberService.addMembers(member, id).subscribe({
-      next: (member) => {
-        window.location.reload();
-      },
-    });
+    // this.memberService.addMembers(member, id).subscribe({
+    //   next: (member) => {
+    //     window.location.reload();
+    //   },
+    // });
   }
 
   onSubmit(): void {

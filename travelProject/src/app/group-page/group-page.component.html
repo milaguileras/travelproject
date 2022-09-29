@@ -4,10 +4,10 @@
             <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
-                    {{item.OrganizationName}}
+                    {{ item.OrganizationName }}
                     </mat-panel-title>
                     <mat-panel-description>
-                    {{item.Description}}
+                    {{ item.Description }}
                     </mat-panel-description>
                 </mat-expansion-panel-header>
                 <div *ngFor="let group of item.Groups; let i= index">
@@ -15,14 +15,21 @@
                         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
-                                {{group.GroupName}}
+                                {{ group.GroupName }}
                                 </mat-panel-title>
                                 <mat-panel-description>
-                                Sponsor:  {{group.SponsorName}}
+                                Sponsor:  {{ group.SponsorName }}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <div *ngFor="let member of group.Members">
-                                {{member.MemberName}}  {{member.MemberEmail}} {{member.MemberPhone}
+                            <div class="member" *ngFor="let member of group.Members">
+                                Member Name:   {{ member.MemberName }} 
+                                <div>
+                                    Member Email:  {{ member.MemberEmail }} 
+                                </div> 
+                                <div>
+                                    Member Phone:  {{ member.MemberPhone }}
+                                </div>
+                                <hr>
                             </div>
                         </mat-expansion-panel>
                     </mat-accordion>
