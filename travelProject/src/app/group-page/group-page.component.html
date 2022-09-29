@@ -11,7 +11,6 @@
                     </mat-panel-description>
                 </mat-expansion-panel-header>
                 <div *ngFor="let group of groups; let i= index">
-                    <ng-template *ngIf="group.OrganizationName == item.OrganizationName"></ng-template>
                     <mat-accordion>
                         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
@@ -22,9 +21,9 @@
                                 Sponsor:  {{group.SponsorName}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <div>
+                            <!-- <div>
                                 {{group.Members.MemberName}}
-                            </div>
+                            </div> -->
                         </mat-expansion-panel>
                     </mat-accordion>
                 </div>

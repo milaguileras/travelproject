@@ -20,9 +20,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { UserFormComponent } from './user-form/user-form.component';
+import { MemberFormComponent } from './member-form/member-form.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import {MatSliderModule} from '@angular/material/slider';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     LandingPageComponent,
     GroupPageComponent,
     GroupFormComponent,
-    UserFormComponent
+    MemberFormComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +50,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    HttpClientModule
+    MatSliderModule,
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

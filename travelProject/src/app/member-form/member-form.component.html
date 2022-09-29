@@ -89,15 +89,15 @@
         </select>
         <p
           *ngIf="
-            !regForm.controls['destination'].valid &&
-            regForm.controls['destination'].touched"
+            !regForm.controls['group'].valid &&
+            regForm.controls['group'].touched"
             class="formMessage"
         >
         Please pick a tour
         </p>
         <input
             type="submit"
-            tabindex="7"
+            tabindex="6"
             id="register-user"
             class="fpButton box-extra"
         />

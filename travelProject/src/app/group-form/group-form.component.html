@@ -1,6 +1,6 @@
 <form
     [formGroup]="groupForm"
-    (ngSubmit)="onSubmit(groupForm.value)"
+    (ngSubmit)="onSubmit()"
     name="registerForm"
     class="box"
     id="registerForm"
@@ -31,10 +31,10 @@
             tabindex="2"
         >
             <option
-                *ngFor="let destination of destinations; let i = index"
+                *ngFor="let destination of destinations; let i = index;"
                 value="{{ destination.OrganizationName }}"
             >
-            {{ this.destinations[i].OrganizationName }}
+            {{ destination.OrganizationName }}
             </option>
         </select>
         <p
@@ -66,7 +66,7 @@
             formControlName="email"
             placeholder="Enter your email address"
             minlength="5"
-            tabindex="2"
+            tabindex="4"
             autocomplete="email"
         />
         <p *ngIf="!groupForm.controls['email'].valid && groupForm.controls['email'].touched" class="formMessage">
@@ -79,15 +79,36 @@
             name="phone"
             autocomplete="phone"
             formControlName="phone"
-            tabindex="3"
+            tabindex="5"
             placeholder="Enter your phone number"
         />
         <p *ngIf="!groupForm.controls['phone'].valid && groupForm.controls['phone'].touched" class="formMessage">
             Please enter your phone
         </p>
+        <label for="maxGroupSize" class="block labelTop">Max Group Size</label>
+        <select
+            name="maxGroupSize"
+            id="maxGroupSize"
+            size="1"
+            formControlName="maxGroupSize"
+            tabindex="6"
+            
+        >
+            <option *ngFor="let number of maxGroupSize">
+            {{ number }}
+            </option>
+        </select>
+        <p
+          *ngIf="
+            !groupForm.controls['maxGroupSize'].valid &&
+            groupForm.controls['maxGroupSize'].touched"
+            class="formMessage"
+        >
+        Please pick a max group size
+        </p>
         <input
             type="submit"
-            tabindex="7"
+            tabindex="6"
             id="register-user"
             class="fpButton box-extra"
         />

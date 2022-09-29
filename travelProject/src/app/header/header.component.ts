@@ -14,12 +14,12 @@ import { Group } from '../models/group.model';
 
 export class HeaderComponent implements OnInit {
   links = [
+    {'name': 'Home ',
+    'route': 'home'},
     {'name': 'Destinations ',
-    'route': 'destination'},
+    'route': 'group'},
     {'name': 'Register a Tour',
     'route': 'register'},
-    {'name': 'Group Page ',
-    'route': 'group'},
     {'name': 'Sign Up ',
     'route': 'signup'},
     {'name': 'Login ',
